@@ -1,0 +1,491 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Apooo ❤️</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(135deg,#16002d,#42004f,#16002d);
+    color: white;
+    font-family: 'Segoe UI', sans-serif;
+    text-align: center;
+    overflow-x: hidden;
+}
+
+.stars {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background-image:
+    radial-gradient(white 1px, transparent 1px),
+    radial-gradient(#ff9ee8 1px, transparent 1px);
+    background-size: 70px 70px, 110px 110px;
+    animation: twinkle 4s infinite alternate;
+    opacity: .5;
+}
+
+@keyframes twinkle {
+    from {opacity:.2}
+    to {opacity:.7}
+}
+
+.container {
+    position: relative;
+    z-index: 2;
+    min-height: 100vh;
+    padding: 45px 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+h1 {
+    color: #ffb6e6;
+    font-size: clamp(27px,6vw,43px);
+    text-shadow: 0 0 20px #ff39bc;
+    margin-bottom: 20px;
+}
+
+.subtitle {
+    color: #ffd8f4;
+    margin-bottom: 35px;
+}
+
+.cake {
+    position: relative;
+    width: 240px;
+    height: 230px;
+    margin: 20px auto 30px;
+}
+
+.plate {
+    position: absolute;
+    bottom: 0;
+    left: -20px;
+    width: 280px;
+    height: 20px;
+    border-radius: 50%;
+    background: linear-gradient(#fff,#d9a4ff);
+    box-shadow: 0 0 25px #ff8be9;
+}
+
+.layer {
+    position: absolute;
+    left: 0;
+    width: 240px;
+    border-radius: 15px 15px 10px 10px;
+    box-shadow: inset -8px -8px 15px #0003,
+                0 8px 15px #0005;
+}
+
+.layer.bottom {
+    bottom: 15px;
+    height: 85px;
+    background: linear-gradient(90deg,#ff5da9,#ffb3d7,#ff5da9);
+}
+
+.layer.middle {
+    bottom: 95px;
+    height: 65px;
+    background: linear-gradient(90deg,#a855d9,#e5a4ff,#a855d9);
+}
+
+.icing {
+    position: absolute;
+    top: -5px;
+    left: 0;
+    width: 100%;
+    height: 22px;
+    background: #fff0f7;
+    border-radius: 50%;
+}
+
+.drip {
+    position: absolute;
+    top: 10px;
+    left: 35px;
+    width: 15px;
+    height: 25px;
+    border-radius: 0 0 12px 12px;
+    background: #fff0f7;
+}
+
+.candle {
+    position: absolute;
+    bottom: 155px;
+    width: 12px;
+    height: 65px;
+    border-radius: 4px;
+    background: repeating-linear-gradient(
+        45deg,#fff,#fff 5px,#ff69b4 5px,#ff69b4 10px
+    );
+    cursor: pointer;
+    z-index: 5;
+}
+
+.c1 {left: 55px}
+.c2 {left: 114px}
+.c3 {left: 173px}
+
+.flame {
+    position: absolute;
+    top: -27px;
+    left: 1px;
+    width: 11px;
+    height: 23px;
+    background: #ffdf5d;
+    border-radius: 50% 50% 40% 40%;
+    box-shadow: 0 0 15px #ff9d00,
+                0 0 30px #ffb700;
+    animation: flicker .4s infinite alternate;
+}
+
+@keyframes flicker {
+    from {transform: scale(1) rotate(-5deg)}
+    to {transform: scale(1.15) rotate(5deg)}
+}
+
+.smoke {
+    position: absolute;
+    top: -35px;
+    left: 0;
+    color: #ddd;
+    font-size: 23px;
+    animation: smoke 1.5s forwards;
+}
+
+@keyframes smoke {
+    to {
+        transform: translateY(-45px) scale(2);
+        opacity: 0;
+    }
+}
+
+button {
+    border: none;
+    padding: 14px 28px;
+    margin: 12px;
+    border-radius: 30px;
+    background: linear-gradient(45deg,#ff48b0,#a64dff);
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 0 20px #ff48b0;
+    transition: .3s;
+}
+
+button:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 30px #ff9be3;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.message {
+    max-width: 650px;
+    margin: 20px auto;
+    padding: 25px;
+    border: 1px solid #ff9be3;
+    border-radius: 22px;
+    background: #ffffff12;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 30px #ff39bc44;
+    animation: appear 1s ease;
+}
+
+@keyframes appear {
+    from {opacity:0;transform:translateY(30px)}
+    to {opacity:1;transform:translateY(0)}
+}
+
+.big {
+    color: #ffb6e6;
+    font-size: clamp(30px,7vw,50px);
+    text-shadow: 0 0 20px #ff38bc;
+    margin: 20px 0;
+}
+
+.heart {
+    font-size: 50px;
+    animation: beat 1s infinite;
+}
+
+@keyframes beat {
+    50% {transform:scale(1.3)}
+}
+
+#nextPage p {
+    font-size: 18px;
+    line-height: 1.9;
+    color: #ffe0f5;
+}
+
+.confetti {
+    position: fixed;
+    top: -20px;
+    z-index: 10;
+    pointer-events: none;
+    animation: fall 4s linear forwards;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(110vh) rotate(720deg);
+        opacity: 0;
+    }
+}
+
+footer {
+    margin-top: 35px;
+    color: #eab8df;
+    font-size: 13px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="stars"></div>
+
+<div class="container">
+
+    <section id="cakePage">
+
+        <h1>🎀 A Special Day For You 🎀</h1>
+
+        <p class="subtitle">
+            Someone special is waiting for your birthday magic ❤️
+        </p>
+
+        <div class="cake">
+
+            <div class="plate"></div>
+
+            <div class="layer bottom"></div>
+
+            <div class="layer middle">
+                <div class="icing"></div>
+                <div class="drip"></div>
+            </div>
+
+            <div class="candle c1" onclick="blow(this)">
+                <div class="flame"></div>
+            </div>
+
+            <div class="candle c2" onclick="blow(this)">
+                <div class="flame"></div>
+            </div>
+
+            <div class="candle c3" onclick="blow(this)">
+                <div class="flame"></div>
+            </div>
+
+        </div>
+
+        <h3 id="instruction">
+            🕯️ Tap all the candles to blow them out!
+        </h3>
+
+        <div id="surpriseButton" class="hidden">
+            <h2 style="margin:20px;color:#ffb6e6">
+                Yayyy! All candles are gone! 🥳
+            </h2>
+            <button onclick="showSurprise()">
+                🎁 CLICK FOR SURPRISE
+            </button>
+        </div>
+
+    </section>
+
+    <section id="birthdayPage" class="hidden">
+
+        <div class="message">
+
+            <div class="heart">❤️</div>
+
+            <h1 class="big">
+                HAPPY BIRTHDAY
+            </h1>
+
+            <h1 style="font-size:55px;color:#fff">
+                APOOO 🥰
+            </h1>
+
+            <h2 style="color:#ffb6e6;margin:20px">
+                It's YOUR Special Day! 🎂
+            </h2>
+
+            <p>
+                Today is all about YOU! ❤️
+                May your life always be filled with happiness,
+                endless smiles and beautiful memories.
+            </p>
+
+            <button onclick="nextPage()">
+                NEXT ❤️
+            </button>
+
+        </div>
+
+    </section>
+
+    <section id="nextPage" class="hidden">
+
+        <div class="message">
+
+            <h1>💌 A Little Message For You</h1>
+
+            <div class="heart">💗</div>
+
+            <p id="wishText">
+                Dear Apooo! 🥹❤️
+
+                You are one of the most beautiful
+                blessings in this world.
+
+                May Allah bless you with endless happiness,
+                good health, success and peace.
+
+                May every dream in your heart come true.
+                May you always have a reason to smile.
+
+                I hope your birthday is as beautiful
+                and special as your heart.
+
+                Keep smiling, keep shining and
+                never stop being amazing! ✨
+
+                Once again, HAPPY BIRTHDAY APOOO! 🎂💖
+            </p>
+
+            <h1 style="margin-top:25px">
+                LOVE YOU SO MUCH! ❤️
+            </h1>
+
+            <button onclick="celebrate()">
+                🎉 MORE CELEBRATION
+            </button>
+
+        </div>
+
+    </section>
+
+    <footer>
+        Made With ❤️ Just For You
+    </footer>
+
+</div>
+
+<script>
+
+let candlesLeft = 3;
+
+function blow(candle) {
+
+    if (!candle.querySelector(".flame")) return;
+
+    candle.querySelector(".flame").remove();
+
+    let smoke = document.createElement("div");
+    smoke.className = "smoke";
+    smoke.innerHTML = "☁️";
+
+    candle.appendChild(smoke);
+
+    candlesLeft--;
+
+    if (candlesLeft === 0) {
+        document.getElementById("instruction").innerHTML =
+        "✨ Make a wish! Your birthday magic is ready! ✨";
+
+        document.getElementById("surpriseButton")
+        .classList.remove("hidden");
+
+        celebrate();
+    }
+
+}
+
+function showSurprise() {
+
+    document.getElementById("cakePage")
+    .classList.add("hidden");
+
+    document.getElementById("birthdayPage")
+    .classList.remove("hidden");
+
+    celebrate();
+
+}
+
+function nextPage() {
+
+    document.getElementById("birthdayPage")
+    .classList.add("hidden");
+
+    document.getElementById("nextPage")
+    .classList.remove("hidden");
+
+    celebrate();
+
+}
+
+function celebrate() {
+
+    const colors = [
+        "#ff4db8",
+        "#ffe066",
+        "#b86bff",
+        "#ffffff",
+        "#ff7777"
+    ];
+
+    for(let i=0;i<90;i++) {
+
+        let piece = document.createElement("div");
+
+        piece.className = "confetti";
+
+        piece.innerHTML =
+        ["❤️","💖","✨","🎉","🌸","⭐"][
+            Math.floor(Math.random()*6)
+        ];
+
+        piece.style.left = Math.random()*100+"vw";
+        piece.style.color =
+        colors[Math.floor(Math.random()*colors.length)];
+
+        piece.style.fontSize =
+        (12+Math.random()*20)+"px";
+
+        piece.style.animationDuration =
+        (2+Math.random()*3)+"s";
+
+        document.body.appendChild(piece);
+
+        setTimeout(()=>{
+            piece.remove();
+        },5000);
+
+    }
+
+}
+
+</script>
+
+</body>
+</html>
